@@ -47,8 +47,8 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="frase">¿Quieres saber el resultado? 💖</h1>
-        <button id="boton" onclick="cambiarFrase()">Sí</button>
+        <h1 id="frase">¿Seguro que quieres saberlo? 🤔</h1>
+        <button id="boton" onclick="cambiarFrase()">Sí, estoy segura 💖</button>
     </div>
     <script>
         const frases = [
@@ -58,7 +58,25 @@
             "¿Y si has fallado? 😱",
             "Bueno... te diré el resultado... 🤭",
             "5️⃣", "4️⃣", "3️⃣", "2️⃣", "1️⃣...", "0️⃣...",
-            "¡Ya! 😊"
+            "¡Ya! 😊",
+            "Por cierto, espero que te haya gustado este proyecto 💖. Quiero decirte que te amo mucho, eres el amor de mi vida ❤️❤️❤️. Y por cierto, esto va junto al aniversario 🎉. No sabes cuánto te amo, un montón. Me encanta tu forma de ser, yo también me pregunto por qué te veo tanto, si verte me hace sentir tan bien bonito. Verte, tu 'ser', hace que me anime y es tu forma de ser que me enamora. Tus expresiones, simplemente todo. 😘",
+            "Owww 💖"
+        ];
+        
+        const botones = [
+            "Sí, estoy segura 💖",
+            "Que sí. 😁",
+            "Mucho 💪",
+            "Siguiente ➡️",
+            "Continuar 🔜",
+            "Continuar 🔜",
+            "Dio'h mio, ¡ayuda UdamEe! 😅",
+            "Venga rápido 😜",
+            "Meme, qué pesado 😂",
+            ".... 🤐",
+            "¡Siiiiiuuu! 🎉",
+            "Y el resultado? 🤔",
+            "Owww 💖"
         ];
         
         let index = 0;
@@ -68,6 +86,7 @@
             index++;
             if (index < frases.length) {
                 document.getElementById("frase").innerText = frases[index];
+                document.getElementById("boton").innerText = botones[index];
             } else {
                 window.location.href = "final.html?status=" + status;
             }
