@@ -10,7 +10,7 @@
     <div class="container">
         <h1 id="message"></h1>
         <p id="extra"></p>
-        <button onclick="location.href='Index.html'">Volver al inicio</button>
+        <button onclick="location.href='preguntas.html'">Volver a intentar</button>
     </div>
 
     <script>
@@ -18,16 +18,15 @@
         let status = params.get("status");
 
         if (status === "win") {
-            document.getElementById("message").innerText = "¡Felicidades al parecer si que me conoces bien :)! 🎉";
-            document.getElementById("extra").innerText = "Seras mi Valentina este 14 de febrero 💕 !!";
+            document.getElementById("message").innerText = "¡Felicidades, al parecer sí que me conoces bien! 🎉";
+            document.getElementById("extra").innerText = "¡Serás mi Valentina este 14 de febrero 💕!";
         } else if (status === "fail") {
             document.getElementById("message").innerText = "¡Oh no! 😢";
-            document.getElementById("extra").innerText = "¡Has fallado, pero bueno no pasa nada, así burrita y todo te quiero y te amo mucho jajajajaj 😜! Aun asi seras mi Valentina x100pre.";
+            document.getElementById("extra").innerText = "Has fallado, pero no pasa nada. Así burrita y todo, te quiero y te amo mucho jajaja 😜. ¡Aun así serás mi Valentina x100pre!";
         } else {
-            document.getElementById("message").innerText = "¡Oh no! 😢";
-            document.getElementById("extra").innerText = "Parece que necesitas conocerme mejor... pero no te preocupes, hayas fallado o no seras mia por siempre buajajajaj .";
+            document.getElementById("message").innerText = "¡Casi, casi! 🤭";
+            document.getElementById("extra").innerText = "Te faltó poquito, pero igualmente te amo demasiado 💕.";
         }
     </script>
 </body>
 </html>
-
