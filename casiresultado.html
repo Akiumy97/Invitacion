@@ -39,7 +39,6 @@
             cursor: pointer;
             margin-top: 20px;
             transition: background 0.3s;
-            text-decoration: none;
         }
         button:hover {
             background: #a22b53;
@@ -58,39 +57,19 @@
             "¿Qué tanto estás segura? 😏",
             "¿Y si has fallado? 😱",
             "Bueno... te diré el resultado... 🤭",
-            "5️⃣",
-            "4️⃣",
-            "3️⃣",
-            "2️⃣",
-            "1️⃣...",
-            "0️⃣...",
-            "¡Ya! 😊",
-            "Por cierto, espero que te haya gustado este proyecto ❤️. Quiero decirte que te amo mucho, eres el amor de mi vida 🥰😘💕. Esto va junto al aniversario. No sabes cuánto te amo, un montón. Me encanta tu forma de ser. Yo también me pregunto por qué te veo tanto si verte me hace sentir tan bonito. Verte a ti, tu 'ser', hace que me anime, y es tu forma de ser lo que me enamora. Tus expresiones, simplemente todo."
+            "5️⃣", "4️⃣", "3️⃣", "2️⃣", "1️⃣...", "0️⃣...",
+            "¡Ya! 😊"
         ];
         
-        const botones = [
-            "Sí, estoy segura",
-            "Que sí 🙄",
-            "Mucho 😤",
-            "Siguiente ➡️",
-            "Continuar 🤔",
-            "Continuar ➡️",
-            "Dio'h mío, ayuUUdamEe 😱",
-            "Venga rápido 😵‍💫",
-            "Meme, qué pesado 😂",
-            ".... 😵",
-            "SiiiiiUUU 🤩",
-            "¿Y el resultado? 🤨",
-            "Owww ❤️"
-        ];
-        
-        let indice = 0;
-        
+        let index = 0;
+        let status = new URLSearchParams(window.location.search).get("status");
+
         function cambiarFrase() {
-            indice++;
-            if (indice < frases.length) {
-                document.getElementById("frase").innerText = frases[indice];
-                document.getElementById("boton").innerText = botones[indice];
+            index++;
+            if (index < frases.length) {
+                document.getElementById("frase").innerText = frases[index];
+            } else {
+                window.location.href = "final.html?status=" + status;
             }
         }
     </script>
