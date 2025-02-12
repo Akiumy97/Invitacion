@@ -15,8 +15,8 @@
         <p>¿Cuál es mi comida preferida? </p>
         <div class="options">
             <button class="btn" onclick="checkAnswer(this, true, 1)">Sushi 🍣</button>
-            <button class="btn" onclick="checkAnswer(this, true, 1)">Kebab 🌯</button>
-            <button class="btn" onclick="checkAnswer(this, true, 1)">Arroz 🍚</button>
+            <button class="btn" onclick="checkAnswer(this, false, 1)">Kebab 🌯</button>
+            <button class="btn" onclick="checkAnswer(this, false, 1)">Arroz 🍚</button>
             <button class="btn" onclick="checkAnswer(this, false, 1)">Pizza 🍕</button>
         </div>
 
@@ -74,7 +74,7 @@
                 status = "partial"; // Algunas correctas, otras incorrectas
             }
 
-            window.location.href = "final.html?status=" + status; // Pasa el estado a la página final
+            window.location.href = "casiresultados.html?status=" + status; // Ahora enlaza con casiresultados.html
         }
     </script>
 
