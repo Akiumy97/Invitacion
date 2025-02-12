@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres saber el resultado? 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffccd5, #fff);
+            color: #333;
+            text-align: center;
+            padding: 40px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin: auto;
+        }
+        h1 {
+            color: #d6336c;
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+        button {
+            display: inline-block;
+            background: #d6336c;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.4em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        button:hover {
+            background: #a22b53;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="frase">¿Quieres saber el resultado? 💖</h1>
+        <button id="boton" onclick="cambiarFrase()">Sí</button>
+    </div>
+    <script>
+        const frases = [
+            "¿Seguro que quieres saberlo? 🤔",
+            "¿Seguro, pero seguro? 🤨",
+            "¿Qué tanto estás segura? 😏",
+            "¿Y si has fallado? 😱",
+            "Bueno... te diré el resultado... 🤭",
+            "5️⃣",
+            "4️⃣",
+            "3️⃣",
+            "2️⃣",
+            "1️⃣...",
+            "0️⃣...",
+            "¡Ya! 😊",
+            "Por cierto, espero que te haya gustado este proyecto ❤️. Quiero decirte que te amo mucho, eres el amor de mi vida 🥰😘💕. Esto va junto al aniversario. No sabes cuánto te amo, un montón. Me encanta tu forma de ser. Yo también me pregunto por qué te veo tanto si verte me hace sentir tan bonito. Verte a ti, tu 'ser', hace que me anime, y es tu forma de ser lo que me enamora. Tus expresiones, simplemente todo."
+        ];
+        
+        const botones = [
+            "Sí, estoy segura",
+            "Que sí 🙄",
+            "Mucho 😤",
+            "Siguiente ➡️",
+            "Continuar 🤔",
+            "Continuar ➡️",
+            "Dio'h mío, ayuUUdamEe 😱",
+            "Venga rápido 😵‍💫",
+            "Meme, qué pesado 😂",
+            ".... 😵",
+            "SiiiiiUUU 🤩",
+            "¿Y el resultado? 🤨",
+            "Owww ❤️"
+        ];
+        
+        let indice = 0;
+        
+        function cambiarFrase() {
+            indice++;
+            if (indice < frases.length) {
+                document.getElementById("frase").innerText = frases[indice];
+                document.getElementById("boton").innerText = botones[indice];
+            }
+        }
+    </script>
+</body>
+</html>
