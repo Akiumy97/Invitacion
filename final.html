@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado 💘</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="message"></h1>
+        <p id="extra"></p>
+        <button onclick="location.href='preguntas.html'">Volver al inicio</button>
+    </div>
+
+    <script>
+        let params = new URLSearchParams(window.location.search);
+        let status = params.get("status");
+
+        if (status === "win") {
+            document.getElementById("message").innerText = "¡Felicidades! 🎉";
+            document.getElementById("extra").innerText = "Eres mi Valentina este 14 de febrero 💕";
+        } else if (status === "fail") {
+            document.getElementById("message").innerText = "¡Oh no! 😢";
+            document.getElementById("extra").innerText = "¡Has fallado, pero bueno no pasa nada, así burrita y todo te quiero y te amo mucho jajajajaj 😜! Quiero que seas mi Valentina x100pre.";
+        } else {
+            document.getElementById("message").innerText = "¡Oh no! 😢";
+            document.getElementById("extra").innerText = "Parece que necesitas conocerme mejor... pero no te preocupes, siempre puedes intentarlo otra vez.";
+        }
+    </script>
+</body>
+</html>
+

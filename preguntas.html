@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas 💖</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>¡Demuestra que eres mi Valentina! 🤗💝</h1>
+
+        <!-- Pregunta 1 -->
+        <p>¿Cuál es mi comida preferida? </p>
+        <div class="options">
+            <button class="btn" onclick="checkAnswer(this, true, 1)">Sushi 🍣</button>
+            <button class="btn" onclick="checkAnswer(this, true, 1)">Kebab 🌯</button>
+            <button class="btn" onclick="checkAnswer(this, true, 1)">Arroz 🍚</button>
+            <button class="btn" onclick="checkAnswer(this, false, 1)">Pizza 🍕</button>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <p>¿Cuáles son mis videojuegos favoritos? 🎮</p>
+        <div class="options">
+            <button class="btn" onclick="checkAnswer(this, true, 2)">Wild Rift</button>
+            <button class="btn" onclick="checkAnswer(this, true, 2)">Call of Duty</button>
+            <button class="btn" onclick="checkAnswer(this, false, 2)">FIFA</button>
+            <button class="btn" onclick="checkAnswer(this, false, 2)">Fortnite</button>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <p>¿Qué coche tengo? 🚗</p>
+        <div class="options">
+            <button class="btn" onclick="checkAnswer(this, true, 3)">Opel Mokka</button>
+            <button class="btn" onclick="checkAnswer(this, false, 3)">BMW Serie 3</button>
+            <button class="btn" onclick="checkAnswer(this, false, 3)">Mercedes Clase A</button>
+            <button class="btn" onclick="checkAnswer(this, false, 3)">DMC DeLorean</button>
+        </div>
+
+        <button class="btn next" id="nextButton" onclick="nextPage()">¡Siguiente! 💖</button>
+    </div>
+
+    <script>
+        let correctAnswers = 0; // Contador para respuestas correctas
+        let incorrectAnswers = 0; // Contador para respuestas incorrectas
+
+        function checkAnswer(button, isCorrect, questionNumber) {
+            if (button.disabled) return; // Evitar clics repetidos
+
+            if (isCorrect) {
+                button.classList.add("correct");
+                correctAnswers++;
+            } else {
+                button.classList.add("wrong");
+                incorrectAnswers++;
+            }
+
+            button.disabled = true;
+
+            // Mostrar el siguiente botón solo cuando se han respondido todas las preguntas
+            if (correctAnswers + incorrectAnswers === 3) {
+                document.getElementById("nextButton").style.display = "block";
+            }
+        }
+
+        function nextPage() {
+            let status;
+            if (correctAnswers === 3) {
+                status = "win"; // Todas las respuestas correctas
+            } else if (incorrectAnswers === 3) {
+                status = "fail"; // Todas las respuestas incorrectas
+            } else {
+                status = "partial"; // Algunas correctas, otras incorrectas
+            }
+
+            window.location.href = "final.html?status=" + status; // Pasa el estado a la página final
+        }
+    </script>
+
+</body>
+</html>
